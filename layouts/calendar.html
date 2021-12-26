@@ -1,0 +1,9 @@
+{{ define "main }}
+    <ul>      
+    {{ range $.Site.Data.Calendar }}
+        {{ if ge (time .dtend) now }}
+        <li>{{.summary}} - {{.dtstart | time | time.Format "02 Jan 2006 15:04"}} - {{ .url }}</li>
+        {{ end }}
+    {{ end }}
+    </ul>
+{{ end }}
