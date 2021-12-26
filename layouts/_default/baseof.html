@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  <title>{{ block "title" . }}
+    {{ .Site.Title }}
+    {{ end }}
+  </title>
+</head>
+
+<body>
+  <header>
+    <h1>{{ .Site.Title }}: {{ .Title }}</h1>
+    <nav>
+      <ul>
+        {{ $currentPage := . }}
+        {{ range .Site.Menus.main }}
+        <li>
+          <a href="{{ .URL }}">{{ .Name }}</a>
+        </li>
+        {{ end }}
+    </nav>
+    </ul>
+  </header>
+  <main>
+    {{ block "main" . }}
+    {{ end }}
+  </main>
+  <footer>
+    {{ block "footer" . }}
+    {{ end }}
+  </footer>
+</body>
+
+</html>
