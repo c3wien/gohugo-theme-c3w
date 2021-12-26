@@ -1,0 +1,13 @@
+[menu]
+
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 10
+
+  [[menu.main]]
+    identifier = "posts"
+    name = "Post"
+    url = "/post/"
+    weight = 10
